@@ -1,0 +1,23 @@
+.listTitle {
+  text-align: center;
+  color: #345b63;
+  padding: 10px;
+}
+
+.listFilter {
+  margin: 7px 30px 50px 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  height: 70vh;
+  overflow: scroll;
+}
+
+.loading {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
