@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import GoogleMapReact from "google-map-react";
-import { useMediaQuery } from "@material-ui/core";
+import { Paper, Typography, useMediaQuery } from "@material-ui/core";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import "./style.css";
+import Rating from '@material-ui/lab/Rating';
 
 const Map = ({
   setCoordinates,
@@ -12,6 +13,7 @@ const Map = ({
   setChildClicked,
   weatherData,
 }) => {
+  const matches = useMediaQuery('(min-width:600px)');
   return (
     <div className="mapContainer">
       <GoogleMapReact
@@ -27,15 +29,27 @@ const Map = ({
         }}
         onChildClick={(child) => setChildClicked(child)}
       >
-        {places?.map((place, i) => (
+         {places.length && places.map((place, i) => (
           <div
             lat={Number(place.latitude)}
             lng={Number(place.longitude)}
             key={i}
           >
-            {<LocationOnOutlinedIcon fontSize="large" />}
+            {!matches
+              ? <LocationOnOutlinedIcon fontSize="large" />
+              : (
+                <Paper elevation={3} className="paper">
+                  <Typography  variant="subtitle2" gutterBottom> {place.name}</Typography>
+                  <img
+                    className="pointer"
+                    src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
+                  />
+                  <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
+                </Paper>
+              )}
           </div>
         ))}
+
         {weatherData?.list?.length && weatherData?.list.map((data, i) => (
           <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
             <img
