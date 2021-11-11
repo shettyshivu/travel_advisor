@@ -10,7 +10,7 @@ const App = () => {
   const [bounds, setBounds] = useState({});
 
   const [childClicked, setChildClicked] = useState(null);
-  const [autocomplete, setAutocomplete] = useState(null);
+  const [autocomplete, setAutocomplete] = useState(null); 
   const [loading, setLoading] = useState(false);
 
   const [type, setType] = useState("restaurants");

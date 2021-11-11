@@ -7,9 +7,7 @@ import {
   FormControl,
   Select,
   MenuItem,
-  Card,
 } from "@material-ui/core";
-import { Place } from "@material-ui/icons";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import "./style.css";
 

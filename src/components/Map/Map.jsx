@@ -27,7 +27,7 @@ const Map = ({
           setCoordinates({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
-        onChildClick={(child) => setChildClicked(child)}
+        onChildClick={(child) => setChildClicked(child)} 
       >
          {places.length && places.map((place, i) => (
           <div
@@ -35,7 +35,7 @@ const Map = ({
             lng={Number(place.longitude)}
             key={i}
           >
-            {!matches
+            {!matches 
               ? <LocationOnOutlinedIcon fontSize="large" />
               : (
                 <Paper elevation={3} className="paper">

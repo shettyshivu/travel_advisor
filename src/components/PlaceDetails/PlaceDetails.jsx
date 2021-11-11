@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardMedia,
-  CardContent,
   CardActions,
   Chip,
 } from "@material-ui/core";
@@ -14,9 +13,9 @@ import LocationOnOutlined from "@material-ui/icons/LocationOnOutlined";
 import { Rating } from "@mui/material";
 import "./style.css";
 
-function PlaceDetails({ place,refProp,selected}) {
-
-  if(selected) refProp?.current?.scrollIntoView({ behavior:"smooth",block:"start"})
+function PlaceDetails({ place, refProp, selected }) {
+  if (selected)
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   return (
     <>
       <Card elevation={6} className="CardContainer">
