@@ -35,18 +35,7 @@ const Map = ({
             lng={Number(place.longitude)}
             key={i}
           >
-            {!matches 
-              ? <LocationOnOutlinedIcon fontSize="large" />
-              : (
-                <Paper elevation={3} className="paper">
-                  <Typography  variant="subtitle2" gutterBottom> {place.name}</Typography>
-                  <img
-                    className="pointer"
-                    src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
-                  />
-                  <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
-                </Paper>
-              )}
+          <LocationOnOutlinedIcon fontSize="large" />
           </div>
         ))}
 
