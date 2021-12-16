@@ -13,7 +13,7 @@ const App = () => {
   const [autocomplete, setAutocomplete] = useState(null); 
   const [loading, setLoading] = useState(false);
 
-  const [type, setType] = useState("restaurants");
+  const [type, setType] = useState("restaurants"); 
   const [rating, setRating] = useState("");
 
   const [places, setPlaces] = useState([]);
@@ -50,7 +50,7 @@ const App = () => {
       getWeatherData(coordinates.lat, coordinates.lng).then((data) => {
         setWeatherData(data);
       });
-
+      
       getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
         setPlaces(data.filter((place) => place.name && place.rating > 0));
         setFilteredPlaces([]);
